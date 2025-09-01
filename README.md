@@ -20,7 +20,7 @@ If you're not sure how to run a local development server, or if you run into som
 >
 > This workshop is split into 5 exercises, and each exercise has a solution video. If you spend more than 10 minutes stuck on an exercise, I encourage you to **watch the solution.** If things are still unclear after that, please ask questions in the Discord community!
 
-## Exercise 1: GuessInput
+## Exercise 1: GuessInput || DONE ✅
 
 First thing’s first: we need a way to submit guesses!
 
@@ -60,7 +60,7 @@ Here's a quick screen recording of the expected result:
 - The input should have a minimum and maximum length of 5.
   - **NOTE:** The `minLength` validator is a bit funky; you may wish to use the `pattern` attribute instead. This is discussed in more detail on the [Solution page](https://courses.joshwcomeau.com/joy-of-react/project-wordle/06-solution#an-alternative-to-minlength).
 
-## Exercise 2: Keeping track of guesses
+## Exercise 2: Keeping track of guesses || DONE ✅
 
 Instead of obliterating the user's guess, let's add it to a list, so we can show the user all of their previously-submitted guesses!
 
@@ -85,7 +85,7 @@ And here's an example of the expected DOM structure:
 - When the user submits their guess, that value should be rendered within this new component.
 - There should be no key warnings in the console!
 
-## Exercise 3: Guess slots
+## Exercise 3: Guess slots || DONE ✅
 
 In the real Wordle game, the initial screen shows 6 rows of 5 squares:
 
@@ -167,7 +167,7 @@ Inside `/src/game-helpers.js`, you'll find a helper function, `checkGuess`. As p
 For example:
 
 ```js
-checkGuess('WHALE', 'LEARN');
+checkGuess("WHALE", "LEARN");
 /*
   Returns:
 
@@ -225,10 +225,7 @@ The user wins the game when their guessed word is identical to the `answer`. The
 
 ```html
 <div class="happy banner">
-  <p>
-    <strong>Congratulations!</strong> Got it in
-    <strong>3 guesses</strong>.
-  </p>
+  <p><strong>Congratulations!</strong> Got it in <strong>3 guesses</strong>.</p>
 </div>
 ```
 
