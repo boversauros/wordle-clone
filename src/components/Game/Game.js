@@ -4,6 +4,7 @@ import GuessList from "./GuessList";
 
 import { sample } from "../../utils";
 import { WORDS } from "../../data";
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -15,7 +16,7 @@ function Game() {
 
   function handleNewGuess(guess) {
     // handle this later
-    if (guesses.length >= 5) return;
+    if (guesses.length >= NUM_OF_GUESSES_ALLOWED) return;
 
     const newGuess = {
       id: crypto.randomUUID(),

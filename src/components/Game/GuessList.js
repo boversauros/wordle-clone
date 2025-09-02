@@ -5,17 +5,15 @@ function GuessList({ guesses }) {
     filledArray.push({ id: crypto.randomUUID(), value: "" });
   }
 
-  console.info({ filledArray });
-
   return (
     <div className="guess-results">
-      {filledArray.map((guess) => (
-        <p className="guess" key={guess.id}>
-          <span className="cell">{guess.value[0]}</span>
-          <span className="cell">{guess.value[1]}</span>
-          <span className="cell">{guess.value[2]}</span>
-          <span className="cell">{guess.value[3]}</span>
-          <span className="cell">{guess.value[4]}</span>
+      {filledArray.map(({ id, value }) => (
+        <p className="guess" key={id}>
+          <span className="cell">{value[0]}</span>
+          <span className="cell">{value[1]}</span>
+          <span className="cell">{value[2]}</span>
+          <span className="cell">{value[3]}</span>
+          <span className="cell">{value[4]}</span>
         </p>
       ))}
     </div>
