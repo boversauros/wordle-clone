@@ -1,28 +1,35 @@
-const EMPTY_ANSWER =  [
-    { letter: "", status: "" },
-    { letter: "", status: "" },
-    { letter: "", status: "" },
-    { letter: "", status: "" },
-    { letter: "", status: "" },
-  ];
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
+const EMPTY_ANSWER =  Array(5).fill({ letter: "", status: null });
+
+function GuessRow({ guessId, guessValue }) {
+  return (
+    <p className="guess">
+      {guessValue.map(({ letter, status }, index) => {        
+        const statusClass = status ? `cell ${status}` : "cell";
+
+        return (
+          <span key={`${guessId}-${index}`} className={statusClass}>
+            {letter}
+          </span>
+        );
+      })}
+    </p>
+  );
+}
 
 function GuessList({ guesses }) {
   let filledArray = [...guesses];
 
-  while (filledArray.length < 5) {
+  console.log(filledArray);
+
+  while (filledArray.length < NUM_OF_GUESSES_ALLOWED) {
     filledArray.push({id: crypto.randomUUID(), value: EMPTY_ANSWER});
   }
 
   return (
     <div className="guess-results">
       {filledArray.map(({ id, value }) => (
-        <p className="guess" key={id}>
-          <span className={`cell ${value[0].status}`}>{value[0].letter}</span>
-          <span className={`cell ${value[1].status}`}>{value[1].letter}</span>
-          <span className={`cell ${value[2].status}`}>{value[2].letter}</span>
-          <span className={`cell ${value[3].status}`}>{value[3].letter}</span>
-          <span className={`cell ${value[4].status}`}>{value[4].letter}</span>
-        </p>
+        <GuessRow key={id} guessId={id} guessValue={value} />
       ))}
     </div>
   );
