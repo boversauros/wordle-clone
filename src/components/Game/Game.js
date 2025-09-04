@@ -23,8 +23,6 @@ function Game() {
   function handleNewGuess(guess) {
     // If the game is over, we don't want to add more guesses.
     if (isGameOver) return;
-    
-    if (guesses.length >= NUM_OF_GUESSES_ALLOWED) return;
 
     const newGuess = {
       id: crypto.randomUUID(),
