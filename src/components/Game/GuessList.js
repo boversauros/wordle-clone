@@ -20,8 +20,6 @@ function GuessRow({ guessId, guessValue }) {
 function GuessList({ guesses }) {
   let filledArray = [...guesses];
 
-  console.log(filledArray);
-
   while (filledArray.length < NUM_OF_GUESSES_ALLOWED) {
     filledArray.push({id: crypto.randomUUID(), value: EMPTY_ANSWER});
   }
