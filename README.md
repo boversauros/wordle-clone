@@ -154,7 +154,7 @@ There are two things that should help you tackle this exercise:
 - Use the `NUM_OF_GUESSES_ALLOWED` constant, when needed.
 - No `key` warnings in the console.
 
-## Exercise 4: Game logic
+## Exercise 4: Game logic DONE || ✅
 
 Alright: over the first 3 exercises, we've been setting up all of the structure and scaffolding. It's time to do some game-logic stuff!
 
@@ -209,7 +209,7 @@ Your task is to use this function to validate the user's guesses, and apply the 
 - When rendering the letters in the `Guess` component, apply the letter's `status` to the `cell` element.
 - "Empty" guess slots should have the same markup as before: `<span class="cell"></span>`.
 
-## Exercise 5: winning and losing
+## Exercise 5: winning and losing DONE || ✅
 
 We're so close! We only have one concern left: ending the game.
 
